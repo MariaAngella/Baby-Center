@@ -1,0 +1,32 @@
+//- users is the variable name----looping through the collection,so that we don't repeat ourselves.....user is a variable for users
+extends layout
+block content
+    div.row.justify-content-center
+            div.col-md-7
+                div.card-body.border
+                    header.card-header  
+                        h4.card-title Welcome Admin
+                    table.table
+                        thead.thead-dark
+                            tr
+                                th Crime Name
+                                th Crime Location
+                                th Crime Decription
+                                th Choose Ranger
+                                th Assign Crime Below
+                            tbody
+                                each informer in informers
+                                    tr 
+                                        td #{informer.firstname}  
+                                        td #{informer.lastname} 
+                                        td #{informer.city}
+                                        td 
+                                            select#inputState.form-control(name="ranger")
+                                                option Choose...
+                                                option(value="Maria Angella" ) Maria Angella
+                                                option(value="Kintu Yasin" ) Kintu Yasin
+                                                option(value="Opio Ben" selected) Opio Ben
+                                                option(value="Ritah Green")  Ritah Green
+                                                option(value="David Luke")  David Luke
+                                        td 
+                                            button.btn.btn-primary.btn-block(type="confirm") Assign Crime   

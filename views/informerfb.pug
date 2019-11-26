@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+    div.row.justify-content-center
+        div.col-md-5
+            div.card-body.border
+                header.card-header
+                    h4.card-title.text-center.pt-1 Thank you!!! Your Submission is Successful
+                article.card-body
+                    div.form-row       
+                            div.col.form-group
+                                label Below are your Points
+                                    input.form-control(type="text" name="point")
+                            div.col.form-group
+                                label Redeem your Prize
+                                    button.btn.btn-primary.btn-block(type="redeem") Redeem your Prize 

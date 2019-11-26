@@ -1,0 +1,25 @@
+//- users is the variable name----looping through the collection,so that we don't repeat ourselves.....user is a variable for users
+extends layout
+block content
+    div.row.justify-content-center
+            div.col-md-7
+                div.card-body.border
+                    header.card-header  
+                        h4.card-title Welcome:
+                            small.text-muted Please Support Locals reporting poaching in RealTime!!!
+
+                    table.table
+                        thead.thead-dark
+                            tr
+                                th Crime Name
+                                th Crime Location
+                                th Crime Decription
+                                th Donate and Save Wildlife
+                            tbody
+                                each informer in informers
+                                    tr
+                                        td #{informer.firstname}  
+                                        td #{informer.lastname} 
+                                        td #{informer.city} 
+                                        td
+                                            a.btn.btn-primary.btn-block(href="/touristfb/"+ informer.id) Please Donate now!!!    

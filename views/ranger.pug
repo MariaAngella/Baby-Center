@@ -1,0 +1,28 @@
+//- users is the variable name----looping through the collection,so that we don't repeat ourselves.....user is a variable for users
+extends layout
+block content
+    div.row.justify-content-center
+            div.col-md-7
+                div.card-body.border
+                    header.card-header  
+                        h4.card-title Welcome Ranger Opio
+                            small.text-muted      Please Confirm Crimes Below!!!
+                    table.table
+                        thead.thead-dark
+                            tr
+                                th Crime Name
+                                th Crime Location
+                                th Crime Decription
+                                th Your Crime Decription
+                                th Confirm Crime Below
+                            tbody
+                                
+                                each informer in informers
+                                    tr 
+                                        td #{informer.firstname}  
+                                        td #{informer.lastname} 
+                                        td #{informer.city}
+                                        td 
+                                            textarea.form-control(name="crime" cols="50", rows="3" placeholder="Please enter your details for the crime activity here:")
+                                        td 
+                                            a.btn.btn-primary.btn-block(href="/rangerfb/"+ informer.id) Confirm Crime      

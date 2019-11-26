@@ -1,0 +1,84 @@
+extends layout.pug
+
+block content
+    div.row.justify-content-center
+        div.col-md-5
+            div.card-body.border
+                header.card-header
+                    h4.card-title.text-center.pt-1 Are you an Informer?
+                article.card-body
+                form(method="POST" action="/informer" enctype="multipart-form-data")
+                    div.form-row
+                        div.col.form-group
+                            label Please Enter Your Phone number
+                            input.form-control(name="phone" placeholder="For Mobile Money:")
+
+                        div.col.form-group
+                            label Name the Crime
+                            input.form-control( name="firstname" placeholder="Enter name for Crime:")
+                            
+                    div.form-row
+                        div.col.form-group
+                            label Select Animal in Danger
+                            select#inputState.form-control(name="lastname1")
+                                option Choose...
+                                option(value="Antelop")  Antelop
+                                option(value="Elephant") Elephant
+                                option(value="Pangolin"  selected) Pangolin
+                                option(value="Rhino") Rhino
+                        div.col.form-group
+                            label Please Describe the Crime Activity
+                            textarea.form-control(name="city" cols="30", rows="3" placeholder="Please enter the details for the crime activity here:")        
+                                
+                    //- form-row end
+                    
+                        
+                    
+                    div.form-row
+                        div.col.form-group
+                            label.form-check.form-check-inline Do you know the Criminal? 
+                        div.form-row
+                            div.col.form-group
+                                input.form-check-input(type="radio" name="gender" value="male")
+                                span.form-check-label Yes
+                        div.col.form-group
+                            label.form-check.form-check-inline
+                                input.form-check-input(type="radio" name="gender" value="female")
+                                span.form-check-label No
+                    //- form-group end
+
+                    div.form-row
+                        div.form-group.col-md-6
+                            label Upload a Video or Picture
+                                //- form(action="/upload" enctype="multipart-form-data")
+                                input.form-control(type="file" name="myPhoto" accept="image/*")
+                                input(type="submit" value="Upload Photo")
+                        div.form-group.col-md-6
+                            label Please Enter Location
+                            select#inputState.form-control(name="lastname")
+                                option Choose...
+                                option(value="Murchison Falls National Park" selected) Murchison Falls National Park
+                                option(value="Queen Elizabeth National Park" ) Queen Elizabeth National Park
+                                option(value="Kibale National Park") Kibale National Park
+                                option(value="Bwindi Impenetrable National Park")  Bwindi Impenetrable National Park
+                                option(value="Lake Mburo National Park")  Lake Mburo National Park
+                    
+                        
+                    div.form-row
+                        div.col.form-group
+                            button.btn.btn-primary.btn-block(type="submit") Submit
+                        
+                    div.form-row
+                        small.col.text-muted By clicking the 'Submit' button, you confirm that you accept our Terms of use and Privacy Policy.
+                        br
+                       
+                            
+                                        
+                //- End of form
+            //- End of Card-body
+    
+
+                
+                                
+                        
+                
